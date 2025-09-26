@@ -24,41 +24,7 @@
 · Python: модуль heapq (только min-heap), возможна реализация своего класса.
 · C++: классы MinHeap, BinomialHeap с поддержкой вставки, удаления, слияния.
 · Java: классы BinaryHeap, BinomialHeap с аналогичными операциями.
-'''py
-import heapq
-
-class BinaryHeap:
-    def __init__(self, initial_data=None):
-        self.heap = []
-        if initial_data is not None:
-            for item in initial_data:
-                self.insert(item)
-    
-    def insert(self, key):
-        heapq.heappush(self.heap, key)
-    
-    def extract_min(self):
-        if not self.heap:
-            return None
-        return heapq.heappop(self.heap)
-    
-    def peek_min(self):
-        if not self.heap:
-            return None
-        return self.heap[0]
-    
-    def is_empty(self):
-        return len(self.heap) == 0
-    
-    def size(self):
-        return len(self.heap)
-    
-    def __len__(self):
-        return len(self.heap)
-    
-    def __bool__(self):
-        return len(self.heap) > 0
-'''
+ 
 
 ## 2. Куча Фибоначчи
 
@@ -105,4 +71,39 @@ class BinaryHeap:
 · C++: производительность, STL, ручная работа с памятью.
 · Java: готовые классы в Collections, строгая типизация.
 
+'''py
+import heapq
+
+class BinaryHeap:
+    def __init__(self, initial_data=None):
+        self.heap = []
+        if initial_data is not None:
+            for item in initial_data:
+                self.insert(item)
+    
+    def insert(self, key):
+        heapq.heappush(self.heap, key)
+    
+    def extract_min(self):
+        if not self.heap:
+            return None
+        return heapq.heappop(self.heap)
+    
+    def peek_min(self):
+        if not self.heap:
+            return None
+        return self.heap[0]
+    
+    def is_empty(self):
+        return len(self.heap) == 0
+    
+    def size(self):
+        return len(self.heap)
+    
+    def __len__(self):
+        return len(self.heap)
+    
+    def __bool__(self):
+        return len(self.heap) > 0
+'''
  
