@@ -106,4 +106,24 @@ class BinaryHeap:
     def __bool__(self):
         return len(self.heap) > 0
 '''
- 
+'''py
+class HashTable:
+        def __init__(self, size=10):
+            self.size = size
+            self.table = [None] * size
+
+        def __setitem__(self, key, value):
+            index = hash(key) % self.size
+            if self.table[index] is None:
+                self.table[index] = [(key, value)]
+            else:
+                self.table[index].append((key, value))
+
+        def __getitem__(self, key):
+            index = hash(key) % self.size
+            if self.table[index] is not None:
+                for k, v in self.table[index]:
+                    if k == key:
+                        return v
+            return None
+  '''
