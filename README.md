@@ -106,8 +106,8 @@ class BinaryHeap:
     def __bool__(self):
         return len(self.heap) > 0
 '''
-'''py
 
+'''py
 class HashTable:
         def __init__(self, size=10):
             self.size = size
